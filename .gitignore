@@ -1,0 +1,11 @@
+/.idea
+/*.iml
+/builds
+/dns-ha
+/coverage.*
+
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*

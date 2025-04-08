@@ -1,0 +1,25 @@
+---
+on:
+  push:
+    branches:
+      - main
+
+name: release
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+      packages: write
+
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v4.2.0
+        name: release
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: simple
+          package-name: ${{ github.repository }}

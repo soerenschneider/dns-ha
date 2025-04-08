@@ -1,0 +1,19 @@
+---
+records:
+  host.my.tld:
+    - ip: 10.0.0.1
+      type: A
+      prio: 250
+      ttl: 60
+      healthchecker:
+        type: icmp
+    - ip: 10.0.1.1
+      type: A
+      prio: 200
+      ttl: 60
+      healthchecker:
+        type: icmp
+
+unbound:
+  db_file: contrib/test.txt
+  service_name: unbound
